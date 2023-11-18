@@ -1,0 +1,84 @@
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/1078890940606976001/1162350793844871188/abstract-texture-simple-simple-background-wallpaper-preview.png?ex=653b9e88&is=65292988&hm=f93160ea9ffdcc2ecbf2ebc09280b86d44311ff63efc9eba9163cc59f4f58246&");
+    background-size: 65%;
+    color: antiquewhite;
+}
+
+.penaburik {
+    display: flex;
+    flex-direction: row;
+}
+@keyframes change-color {
+    0% {
+      box-shadow: 0 0 50px rgba(66, 133, 244); 
+    }
+    50% {
+      box-shadow: 0 0 100px rgba(219, 68, 55); 
+    }
+    100% {
+      box-shadow: 0 0 50px rgba(15, 157, 88); 
+    }
+  }
+fieldset {
+    animation: change-color 4s infinite; 
+    width: 75%;
+    margin: auto;
+    .navbar {
+      overflow: hidden;
+      background-color: #000000;
+  }
+    
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: aliceblue;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+    
+    .dropdown {
+      float: left;
+      overflow: hidden;
+  }
+    
+    .dropdown .dropbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color:aliceblue;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+  }
+    
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: rgb(132, 0, 0);
+  }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+  }
+    
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+  }
+    
+    .dropdown-content a:hover {
+      background-color: #ddd;
+  }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+  }

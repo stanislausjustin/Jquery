@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <fieldset class="balls">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index2.html">Menu Page</a>
+            <div class="dropdown">
+                <button class="dropbtn" id="chefDropdown">Chef Zhandos 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="chefDropdownContent">
+                    <a href="index3.html">Images</a>
+                    <a href="index4.html">About him</a>
+                </div>
+            </div> 
+        </div>
+        <h2> About our very own </h2>
+<br>
+        <h1> Michelin chef, Chef Zhandos [let him cook bro] </h1>
+        </fieldset>
+    <br>
+<div class="picz">
+        <div class="garfield">
+            <h2>[click to zoom]</h2>
+            <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175308250040774726/image.png?ex=656ac21a&is=65584d1a&hm=fab56395e1c54b4fe0898b22971a5c88c377f8b299821de71d7c4f903c1357f9&" class="zoomable" width="350" height="250">
+            <p> Drawing spaceship/UFO - he's explaining the basics of using a pan for cooking
+            </p>
+        </div>
+
+        <div class="dufan">
+            <h2>[click to zoom]</h2>
+            <img class="zoomable" src="https://cdn.discordapp.com/attachments/1078890940606976001/1175176621855092910/IMG_4520.jpg?ex=656a4784&is=6557d284&hm=610e5abc6d307d1526eea8f804abb3f410b30da7b89a0a73a0e3828d3c68ee32&" width="400" height="350">
+            <p> He actually won first place at a global cooking competition called SciCompChef. He then continued to 
+            <br>
+            make his own ok idk what im writing intinya ya kena mental scicomp sorry sir 
+        </div>
+
+        <div class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="zoomedImg">
+        </div>
+</div>
+<br>
+    <div class="zhandos">
+        <h2> RARE PICTURE OF HIM COOKING [click to zoom] </h2>
+        <img class="zoomable" src="https://cdn.discordapp.com/attachments/1078890940606976001/1175307458198130808/IMG_4531.jpg?ex=656ac15e&is=65584c5e&hm=4927f10a0244e0e5f2a528eb89f274fbcbf89fa1f551e151a300a9be3d894a8f&" width="400" height="250">
+    </div>
+    <script>
+$(document).ready(function() {
+    let imgWidth, imgHeight;
+
+    $('.zoomable').on('click', function() {
+        var imgSrc = $(this).attr('src');
+        $('#zoomedImg').attr('src', imgSrc);
+        $('.modal').show();
+
+        imgWidth = this.naturalWidth;
+        imgHeight = this.naturalHeight;
+    });
+
+    $('.close').on('click', function() {
+        $('.modal').hide();
+    });
+
+    $(window).on('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            $('.modal').hide();
+        }
+    });
+
+    $('#zoomedImg').on('mousemove', function(e) {
+        let mouseX = e.pageX - $(this).offset().left;
+        let mouseY = e.pageY - $(this).offset().top;
+
+        let xRatio = mouseX / imgWidth;
+        let yRatio = mouseY / imgHeight;
+
+        let previewX = -xRatio * ($(this).width() - $('.modal-content').width());
+        let previewY = -yRatio * ($(this).height() - $('.modal-content').height());
+
+        $('.modal-content').css({
+            'background-position': previewX + 'px ' + previewY + 'px'
+        });
+    });
+});
+    </script>
+</body>
+</html>

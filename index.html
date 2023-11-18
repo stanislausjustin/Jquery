@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset id="ariel">
+
+
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index2.html">Menu Page</a>
+        <div class="dropdown">
+            <button class="dropbtn" id="chefDropdown">Chef Zhandos 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="chefDropdownContent">
+                <a href="index3.html">Images</a>
+                <a href="index4.html">About him</a>
+            </div>
+        </div> 
+    </div>
+<br>
+<br>
+<br>
+<br>
+        <div class="container">
+            <div class="content">
+              <h1> Scicomp Diner </h1>
+              <h3> Seasonal taste of depression and self-harm ❤️ </h3>
+              <h4> [SIR, DISCLAIMER PLS JGN KASI LIAT KE ORGNYA I GAMAU - POINTS SCICOMP] </h4>
+            </div>
+        </div>
+
+
+    <p> Welcome to the official Scicomp Diner recipe book web app. Here we serve nothing but the very best
+        taste of depression and unyielding anxiety for you. Feel free to take a look around our menu, and don't 
+        forget to take a look at our very own chef, Chef Zhandos — a world class chef at cooking confusion.
+
+    </p>
+
+        </div>
+        </div>
+</fieldset>
+
+<script>
+  $(document).ready(function() {
+        var timeout;
+        $('#chefDropdown, #chefDropdownContent').hover(function() {
+            clearTimeout(timeout);
+            $('#chefDropdownContent').stop(true, true).slideDown('fast');
+        }, function() {
+            timeout = setTimeout(function() {
+                $('#chefDropdownContent').stop(true, true).slideUp('fast');
+            }, 200); // Adjust the delay as needed
+        });
+
+        $('#chefDropdownContent').mouseleave(function() {
+            timeout = setTimeout(function() {
+                $('#chefDropdownContent').stop(true, true).slideUp('fast');
+            }, 200); // Adjust the delay as needed
+        });
+
+        $('#chefDropdownContent a').on('click', function() {
+            // Handle click actions for the dropdown links if needed
+            // For example: window.location.href = $(this).attr('href');
+        });
+
+        // Optional: Hide dropdown on clicking outside
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.dropdown').length) {
+                $('#chefDropdownContent').slideUp('fast');
+            }
+        });
+    });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index4.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+       
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index2.html">Menu Page</a>
+        <div class="dropdown">
+            <button class="dropbtn" id="chefDropdown">Chef Zhandos 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="chefDropdownContent">
+                <a href="index3.html">Images</a>
+                <a href="index4.html">About him</a>
+            </div>
+        </div> 
+    </div>
+
+        <h2> Education </h2>
+        <div class="penaburik">
+        <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175284891559153785/JWC-74-min-scaled.png?ex=656aac59&is=65583759&hm=72c4d3daab73038820c0116f72dbafa465c07a2720734baa35685582ffeeb154&" width="auto" height="300"> 
+        <ol>
+            <li style="color: antiquewhite;">
+              <img src="png-transparent-social-media-icons-linkedin-logo-linkedin-learning-job-professional-blue-text-thumbnail.png" width="45" height="45">
+              <a href="https://www.linkedin.com/in/zhandos-yessenbayev-13aa79144/?originalSubdomain=kz"> Zhandos Yessenbayev </a>
+            </li>
+            <li style="color: antiquewhite;">
+            <p> Project leader from Nazarbayev University, senior researcher of NLA </p> <a href="https://nuris.nu.edu.kz/kamaz_nuris">
+                Nazarbayev University </a>
+            </li>
+          <li>
+            <p> Subject content coordinator </p> <a href="https://international.binus.ac.id/computer-science/people/">
+              Binus International University </a>
+          </li>
+        </ol>
+        </div>
+        <h4> Skills </h4>
+        <input type="checkbox" checked> <label style="color: antiquewhite;"> Cooking confusion for others </label> <br>
+        <input type="checkbox" checked> <label style="color: antiquewhite;"> Scientific computing </label> <br>
+        
+        <script>
+          $(document).ready(function() {
+                var timeout;
+                $('#chefDropdown, #chefDropdownContent').hover(function() {
+                    clearTimeout(timeout);
+                    $('#chefDropdownContent').stop(true, true).slideDown('fast');
+                }, function() {
+                    timeout = setTimeout(function() {
+                        $('#chefDropdownContent').stop(true, true).slideUp('fast');
+                    }, 200); // Adjust the delay as needed
+                });
+        
+                $('#chefDropdownContent').mouseleave(function() {
+                    timeout = setTimeout(function() {
+                        $('#chefDropdownContent').stop(true, true).slideUp('fast');
+                    }, 200); // Adjust the delay as needed
+                });
+        
+                $('#chefDropdownContent a').on('click', function() {
+                    // Handle click actions for the dropdown links if needed
+                    // For example: window.location.href = $(this).attr('href');
+                });
+        
+                // Optional: Hide dropdown on clicking outside
+                $(document).on('click', function(event) {
+                    if (!$(event.target).closest('.dropdown').length) {
+                        $('#chefDropdownContent').slideUp('fast');
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

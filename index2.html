@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="index2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<fieldset class="balls">
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index2.html">Menu Page</a>
+        <div class="dropdown">
+            <button class="dropbtn" id="chefDropdown">Chef Zhandos 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="chefDropdownContent">
+                <a href="index3.html">Images</a>
+                <a href="index4.html">About him</a>
+            </div>
+        </div> 
+    </div>
+    <h2> Menu Page </h2>
+<br>
+    <h1> We serve depression from scicomp </h1>
+</fieldset>
+<br>
+<br>
+<div class="buttons">
+    <button class="filter-button" data-filter="all">All</button>
+    <button class="filter-button" data-filter="pumping-lemma">Pumping Lemma</button>
+    <button class="filter-button" data-filter="push-down-automata">Push Down Automata</button>
+    <button class="filter-button" data-filter="turing-machines">Turing Machines</button>
+</div>
+<br>
+<div class="gallery" id="gallery">
+    <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175334337126866974/image.png?ex=656ada66&is=65586566&hm=9effc176c26f2cee8f132e9fea87c613ad0a3f96bf4ea31b75ab264edea59c32&" alt="Image 1" data-category="pumping-lemma">
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175334440310943744/image.png?ex=656ada7f&is=6558657f&hm=4f2f11043a9a867034e75d08fc8ec415bd615de246452198db4277d8b8318afe&=" alt="Image 1" data-category="pumping-lemma">
+    <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175334390822359050/image.png?ex=656ada73&is=65586573&hm=7d44ca4d6b284679af00a15e3e72c6d78256ad45ed84bca109f1e49994359753&" alt="Image 1" data-category="pumping-lemma">
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175334462343630900/image.png?ex=656ada84&is=65586584&hm=919c3f04e3fca0fc4ce33f953ef95728abe1ad55f89749fc12127b6f98c62f23&=" alt="Image 1" data-category="pumping-lemma">
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175334417993060412/image.png?ex=656ada79&is=65586579&hm=c5f8729599c597e604e69aa62e44e112658af8adb88d4f7852282a7f1c471e43&=" alt="Image 1" data-category="pumping-lemma">
+    <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175339851596439632/MtfOT.png?ex=656adf89&is=65586a89&hm=35aa0d6b01e4bee321681c15d5a310e1e08fa9d92bea007f9545c8f3f32dc0b7&" alt="Image 1" data-category="pumping-lemma">
+    <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175340643845939251/image.png?ex=656ae046&is=65586b46&hm=f490d9637b1b0cc267e8ac9bb11030e1efa20b0e836da326c95a3eb3cb4050c9&" alt="Image 1" data-category="pumping-lemma">
+
+
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175340946544668734/image.png?ex=656ae08e&is=65586b8e&hm=caef61bc11801ed111f99a4a788b19f77cf7a48c37670c9f8709b2e5ee9e5337&=" alt="Image 2" data-category="push-down-automata">
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175341004803547206/image.png?ex=656ae09c&is=65586b9c&hm=0028cd75c2a5ba19af456461c749e2825956a3046c58722d04ebf3934d327370&=" alt="Image 2" data-category="push-down-automata">
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175343598888292380/image.png?ex=656ae306&is=65586e06&hm=ffe167bd090b724afbd958c1d71ff8c3b3876f056ad2fd0bcbecdfa805693138&=" alt="Image 3" data-category="turing-machines">
+    <img src="https://media.discordapp.net/attachments/1078890940606976001/1175343624704237619/image.png?ex=656ae30c&is=65586e0c&hm=14e9d44c7fd41f36b87d11f61271bffea3cf39a9ba85cbc5cd230baea59e157e&=" alt="Image 3" data-category="turing-machines">
+    <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175343654362169404/image.png?ex=656ae314&is=65586e14&hm=532ff3987658442f3e131d749949e5de171c6d2502bde469b0943ec9d7ad249b&" alt="Image 3" data-category="turing-machines">
+    <img src="https://cdn.discordapp.com/attachments/1078890940606976001/1175343685685219328/image.png?ex=656ae31b&is=65586e1b&hm=29f0378eac96001c516c45210a9756bf191922fa80966745ce3671160017e742&" alt="Image 3" data-category="turing-machines">
+  </div>
+  
+
+  
+<script>
+$(document).ready(function() {
+  $('.filter-button').on('click', function() {
+    const filter = $(this).data('filter');
+    
+    if (filter === 'all') {
+      $('#gallery img').show(); // Show all images if 'All' is clicked
+    } else {
+      $('#gallery img').hide(); // Hide all images
+
+      // Show only images with the selected category
+      $(`#gallery img[data-category="${filter}"]`).show();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
