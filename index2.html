@@ -61,11 +61,11 @@ $(document).ready(function() {
     const filter = $(this).data('filter');
     
     if (filter === 'all') {
-      $('#gallery img').show(); // Show all images if 'All' is clicked
+      $('#gallery img').show(); 
     } else {
-      $('#gallery img').hide(); // Hide all images
+      $('#gallery img').hide(); 
 
-      // Show only images with the selected category
+    
       $(`#gallery img[data-category="${filter}"]`).show();
     }
   });
