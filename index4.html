@@ -55,21 +55,20 @@
                 }, function() {
                     timeout = setTimeout(function() {
                         $('#chefDropdownContent').stop(true, true).slideUp('fast');
-                    }, 200); // Adjust the delay as needed
+                    }, 200); 
                 });
         
                 $('#chefDropdownContent').mouseleave(function() {
                     timeout = setTimeout(function() {
                         $('#chefDropdownContent').stop(true, true).slideUp('fast');
-                    }, 200); // Adjust the delay as needed
+                    }, 200); 
                 });
         
                 $('#chefDropdownContent a').on('click', function() {
-                    // Handle click actions for the dropdown links if needed
-                    // For example: window.location.href = $(this).attr('href');
+                
                 });
         
-                // Optional: Hide dropdown on clicking outside
+               
                 $(document).on('click', function(event) {
                     if (!$(event.target).closest('.dropdown').length) {
                         $('#chefDropdownContent').slideUp('fast');
