@@ -51,17 +51,17 @@ a {
     display: flex;
 }
 .container {
-    max-width: 800px; /* Maximum width */
-    margin:  auto; /* Center it */
+    max-width: 800px;
+    margin:  auto; 
 }
   
   .container .content { 
-    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    bottom: 0;
     background: rgb(0, 0, 0); 
     background: rgba(0, 0, 0, 0.5); 
     color: #f1f1f1; 
-    width: 130%; /* Full width */
-    padding: 20px; /* Some padding */
+    width: 130%; 
+    padding: 20px;
     margin-top: -8%;
     margin-left: -18%;
 }
